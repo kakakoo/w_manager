@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.i4uworks.weys.vbank.VbankDao">
+
+	<!-- 예약건, 입금건 확인 -->
+	<select id="selectFindRsv" resultType="map">
+	/* selectFindRsv */
+		SELECT
+			R.RSV_ID
+			, IFNULL(U.FORIGN, 'N') FORIGN
+			, CAST(AES_DECRYPT(IFNULL(U.USR_NM, R.RSV_NM), SHA2(#{encKey},512)) AS CHAR) RSV_NM
+			, CAST(AES_DECRYPT(U.GIV_NM, SHA2(#{encKey},512)) AS CHAR) GIV_NM
+			, CAST(AES_DECRYPT(U.SUR_NM, SHA2(#{encKey},512)) AS CHAR) SUR_NM
+		FROM RSV R
+		LEFT OUTER JOIN USER U ON R.USR_ID = U.USR_ID
+		WHERE R.RSV_ST = 'S'
+			AND R.GET_AMNT = #{getAmnt}
+	</select>
+	
+	<insert id="insertVbankSt">
+		INSERT INTO VBANK_CHK(
+			ICM_NM
+			, GET_AMNT
+			, MSG
+			, RSV_ID
+			, CHK_ST
+			, REG_DTTM
+		) VALUES (
+			AES_ENCRYPT(#{icmNm}, SHA2(#{encKey},512))
+			, #{getAmnt}
+			, #{msg}
+			, #{rsvId}
+			, #{chkSt}
+			, NOW()
+		)
+	</insert>
+	
+	<!-- 가상계좌 입금 완료 -->
+	<update id="updateRsvIncome">
+	/* updateRsvIncome */
+		UPDATE RSV
+			SET RSV_ST = #{toBe}
+				, ADMIN_KEY = #{adminKey}
+				, MOD_DTTM = NOW()
+				, ICM_DTTM = NOW()
+		WHERE RSV_ID = #{rsvId}
+			AND RSV_ST = 'S'
+	</update>
+	
+	<!-- 가상계좌 입금 상태 변경 -->
+	<insert id="insertRsvLogVO">
+	/* insertRsvLogVO */
+		INSERT INTO RSV_LOG(
+			RSV_ID
+			, AS_IS
+			, TO_BE
+			, REG_DTTM
+		)
+		SELECT
+			RSV_ID
+			, #{asIs}
+			, #{toBe}
+			, NOW()
+		FROM RSV
+		WHERE RSV_ID = #{rsvId}
+	</insert>
+	
+	<!-- 예약 qr 코드체크 -->
+	<select id="selectRsvQrCnt" resultType="int">
+	/* selectRsvQrCnt */
+		SELECT
+			COUNT(RSV_ID)
+		FROM RSV
+		WHERE RSV_QR = #{value}
+	</select>
+	
+	<!-- 예약 qr등록 -->
+	<update id="updateQrCode">
+	/* updateQrCode */
+		UPDATE RSV
+			SET RSV_QR = #{qr}
+				, RSV_QR_IMG = #{qrCodeUrl}
+		WHERE RSV_ID = #{rsvId}
+	</update>
+	
+	<!-- 멤버십, 예약 가상계좌 구분 -->
+	<select id="selectRsvForm" resultType="map">
+	/* selectRsvForm */
+		SELECT
+			R.RSV_FORM
+			, S.STORE_CENTER
+			, S.STORE_TAG
+		FROM RSV R, STORE S
+		WHERE R.RSV_ST = 'R'
+			AND R.RSV_ID = #{value}
+			AND R.STORE_ID = S.STORE_ID
+	</select>
+	
+	<!-- 예약금 입금에 대한 정보 -->
+	<select id="selectResPayInfo" resultType="map">
+	/* selectResPayInfo */
+		SELECT
+			CASE WHEN U.FORIGN = 'Y' THEN CONCAT(CAST(AES_DECRYPT(U.GIV_NM, SHA2(#{encKey},512)) AS CHAR), ' ', CAST(AES_DECRYPT(U.SUR_NM, SHA2(#{encKey},512)) AS CHAR))
+				ELSE CAST(AES_DECRYPT(IFNULL(U.USR_NM, R.RSV_NM), SHA2(#{encKey},512)) AS CHAR) END RSV_NM
+			, R.RSV_NO
+			, IFNULL(R.USR_ID, 0) USR_ID
+			, R.RSV_ID
+			, R.UNIT
+			, R.RSV_AMNT
+			, R.GET_AMNT
+			, R.RSV_QR
+			, CONCAT(S.STORE_NM, ' ', S.STORE_ADDR) STORE_NM
+			, CONCAT(CAST(AES_DECRYPT(R.RSV_ADDR, SHA2(#{encKey},512)) AS CHAR), ' ', CAST(AES_DECRYPT(R.RSV_ADDR_DETAIL, SHA2(#{encKey},512)) AS CHAR)) ADDR
+			, R.RSV_DT
+			, R.RSV_TM
+			, S.DELIVER_TIME
+			, IFNULL(U.NATION, '82') NATION
+			, CAST(AES_DECRYPT(IFNULL(U.USR_TEL, R.RSV_TEL), SHA2(#{encKey},512)) AS CHAR) USR_TEL
+			, CAST(AES_DECRYPT(IFNULL(U.USR_EMAIL, R.RSV_EMAIL), SHA2(#{encKey},512)) AS CHAR) USR_EMAIL
+			, S.STORE_TEL ADMIN_TEL
+			, UN.UNIT_NM
+		FROM RSV R
+		INNER JOIN STORE S ON R.STORE_ID = S.STORE_ID
+		INNER JOIN UNIT UN ON R.UNIT = UN.UNIT_CD
+		LEFT OUTER JOIN USER U ON R.USR_ID = U.USR_ID
+		LEFT OUTER JOIN ADMIN A ON R.ADMIN_KEY = A.ADMIN_KEY
+		WHERE R.RSV_ID = #{rsvId}
+	</select>
+	
+	<!-- 알림톡 전송 로그  -->
+	<insert id="insertKakaoLog">
+	/* insertKakaoLog */
+		INSERT INTO KAKAO_LOG(
+			USR_ID
+			, MSG
+			, TEMPLETE
+			, REG_DTTM
+		) VALUES (
+			#{usrId}
+			, #{msg}
+			, #{templete}
+			, NOW()
+		)
+	</insert>
+	
+	<!-- 멤버십, 예약 가상계좌 푸시 발송 -->
+	<select id="selectVbFinUuid" resultType="map">
+	/* selectVbFinUuid */
+		SELECT
+			T.UUID
+			, T.OS
+			, 'R' TYPE
+		FROM RSV R
+		LEFT OUTER JOIN USER_TOKEN T ON R.USR_ID = T.USR_ID
+		WHERE R.RSV_ID = #{rsvId}
+			AND T.UUID != ''
+			AND T.PUSH_ST = 'Y'
+			AND T.UUID IS NOT NULL
+	</select>
+	
+	<!-- 예약 알람 등록 -->
+	<insert id="insertAlarm">
+	/* insertAlarm */
+		INSERT INTO ALARM(
+			USR_ID
+			, ARM_TP
+			, ARM_ST
+			, ARM_TITLE
+			, ARM_TARGET
+			, ARM_VAL
+			, REG_DTTM
+		)
+		SELECT
+			USR_ID
+			, #{armTp}
+			, 'N'
+			, #{armTitle}
+			, #{armTarget}
+			, #{armVal}
+			, NOW()
+		FROM RSV
+		WHERE RSV_ID = #{rsvId}
+	</insert>
+	
+	<!-- 담당자 기기 uuid -->
+	<select id="selectAdminUuid" resultType="string">
+		/* selectAdminUuid */
+		SELECT
+			UUID
+		FROM ADMIN_TOKEN
+		WHERE UUID != ''
+	</select>
+	
+	
+</mapper>

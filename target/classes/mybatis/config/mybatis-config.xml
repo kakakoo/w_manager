@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<setting name="callSettersOnNulls" value="true"/><!-- data가 null일때 속성 설정 -->
+	</settings>
+	 
+	<typeAliases>
+  		<typeAlias type="com.i4uworks.weys.login.LoginInfoVO" alias="loginInfoVO"/>
+  		<typeAlias type="com.i4uworks.weys.login.NoticeVO" alias="noticeVO"/>
+  		<typeAlias type="com.i4uworks.weys.rsv.RsvInfoVO" alias="rsvInfoVO"/>
+	</typeAliases>
+</configuration>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.i4uworks.weys.login.LoginDao">
+
+	<!-- 로그인 정보 -->
+	<select id="selectAdmInfo" resultType="loginInfoVO">
+	/* selectAdmInfo */
+		SELECT
+			A.ADMIN_KEY
+			, A.ADMIN_ID
+			, A.ADMIN_PW
+			, A.ADMIN_NAME
+			, A.ADMIN_TP
+			, AT.UUID uuid
+			, AT.OS os
+			, GROUP_CONCAT(S.STORE_NM) STORE_NM
+			, GROUP_CONCAT(S.STORE_ID) stores
+		FROM ADMIN A
+		LEFT OUTER JOIN ADMIN_STORE ADS ON A.ADMIN_KEY = ADS.ADMIN_KEY
+		LEFT OUTER JOIN STORE S ON ADS.STORE_ID = S.STORE_ID
+		LEFT OUTER JOIN ADMIN_TOKEN AT ON A.ADMIN_KEY = AT.ADMIN_KEY
+		WHERE A.ADMIN_ID = #{value}
+			AND A.ADMIN_TP IN ('S', 'M', 'H')
+			AND A.ADMIN_ST = 'Y'
+	</select>
+	
+	<!-- 토큰 정보 -->
+	<insert id="insertTokeninfo">
+	/* insertTokeninfo */
+		INSERT INTO ADMIN_TOKEN(
+			ADMIN_KEY
+			, TOKEN_ADM
+			, TOKEN_EXPIRE_DTTM
+			, UUID
+			, OS
+		) VALUES (
+			#{adminKey}
+			, #{tokenAdm}
+			, #{tokenExpireDttm}
+			, #{uuid}
+			, #{os}
+		)
+		ON DUPLICATE KEY UPDATE
+			TOKEN_ADM = #{tokenAdm}
+			, TOKEN_EXPIRE_DTTM = #{tokenExpireDttm}
+			, UUID = #{uuid}
+			, OS = #{os}
+	</insert>
+	
+	<!-- 로그 등록 -->
+	<insert id="insertLog">
+	/* insertLog */
+		INSERT INTO ADMIN_LOG(
+			ADMIN_KEY
+			, ACT
+			, REG_DTTM
+		) VALUES (
+			#{value}
+			, 'L'
+			, NOW()
+		)
+	</insert>
+	
+	<!-- 토큰 정보 확인 -->
+	<select id="selectCheckToken" resultType="int">
+	/* selectCheckToken */
+		SELECT
+			COUNT(ADMIN_KEY)
+		FROM ADMIN_TOKEN
+		WHERE TOKEN_ADM = #{value}
+			AND TOKEN_EXPIRE_DTTM &gt; NOW()
+	</select>
+	
+	<!-- 토큰 정보 등록 -->
+	<update id="updateTokeninfo">
+	/* updateTokeninfo */
+		UPDATE ADMIN_TOKEN
+			SET TOKEN_ADM = #{tokenAdm}
+				, TOKEN_EXPIRE_DTTM = #{tokenExpireDttm}
+				<if test='uuid != null and uuid != ""'>
+				, UUID = #{uuid}
+				</if>
+				, OS = #{os}
+		WHERE ADMIN_KEY = #{adminKey}
+	</update>
+	
+	<!-- 토큰 정보 제거 -->
+	<update id="updateLogout">
+	/* updateLogout */
+		UPDATE ADMIN_TOKEN
+			SET UUID = ''
+				, TOKEN_ADM = ''
+		WHERE ADMIN_KEY = #{value}
+	</update>
+	
+	<!-- 지점명 가져오기 -->
+	<select id="selectStoreNm" resultType="string">
+	/* selectStoreNm */
+		SELECT
+			S.STORE_NM
+		FROM ADMIN A, STORE S
+		WHERE A.ADMIN_KEY = #{value}
+			AND A.STORE_ID = S.STORE_ID
+	</select>
+	
+	<!-- sms 리스트 -->
+	<select id="selectSmsList" resultType="map">
+	/* selectSmsList */
+		SELECT
+			SMS_ID smsId
+			, SMS_TITLE smsTitle
+			, SMS_TEXT smsText
+		FROM ADMIN_SMS
+	</select>
+	
+	<!-- 멤버십 가안된 인원 -->
+	<select id="selectNonMember" resultType="int">
+	/* selectNonMember */
+		SELECT 
+			U.USR_ID 
+		FROM USER U
+		LEFT OUTER JOIN MEMBER M ON U.USR_ID = M.USR_ID 
+		WHERE U.USR_ST = 'Y'
+			AND M.MEMBER_ID IS NULL
+	</select>
+	
+	<!-- 바코드 중복 체크 -->
+	<select id="selectMemberBarcodeCnt" resultType="int">
+	/* selectMemberBarcodeCnt */
+		SELECT
+			COUNT(MEMBER_ID)
+		FROM MEMBER
+		WHERE BARCODE = #{value}
+	</select>
+	
+	<!-- 멤버십 등록 -->
+	<insert id="insertMemberInfo">
+	/* insertMemberInfo */
+		INSERT INTO MEMBER(
+			USR_ID
+			, BARCODE
+			, BARCODE_URL
+			, START_DT
+			, END_DT
+			, COST
+			, LIMIT_AMNT
+		) VALUES (
+			#{usrId}
+			, #{barcode}
+			, #{barcodeUrl}
+			, NOW()
+			, #{endDt}
+			, #{cost}
+			, #{cost}
+		)
+	</insert>
+	
+	<!-- 멤버십 연장을 -->
+	<insert id="insertMemberActive">
+	/* insertMemberActive */
+		INSERT INTO MEMBER_ACTIVE(
+			MEMBER_ID
+			, TP
+			, REG_DTTM
+			, ADD_COST
+			, USE_COST
+			, DUE_DTTM
+			, PAPER
+		)
+		SELECT
+			M.MEMBER_ID
+			, 'N'
+			, NOW()
+			, M.COST
+			, M.COST
+			, #{endDt}
+			, #{txt}
+		FROM MEMBER M
+		WHERE M.USR_ID = #{usrId}
+	</insert>
+	
+	<!-- qr 없는 사용자 -->
+	<select id="selectNonQrUsr" resultType="int">
+	/* selectNonQrUsr */
+		SELECT
+			USR_ID
+		FROM USER
+		WHERE USR_ST = 'Y'
+			AND BARCODE IS NULL
+	</select>
+	
+	<!-- 사용자 바코드 중복 검색 -->
+	<select id="selectBarcodeCnt" resultType="int">
+	/* selectBarcodeCnt */
+		SELECT
+			COUNT(USR_ID)
+		FROM USER
+		WHERE BARCODE = #{value}
+	</select>
+	
+	<!-- 사용자 바코드 등록 -->
+	<update id="updateUsrBarcode">
+	/* updateUsrBarcode */
+		UPDATE USER
+			SET BARCODE = #{barcode}
+				, BARCODE_URL = #{barcodeUrl}
+		WHERE USR_ID = #{usrId}
+	</update>
+	
+	<!-- 관리자 게시판 -->
+	<select id="selectAdminNoice" resultType="noticeVO">
+	/* selectAdminNoice */
+		SELECT
+			AN.AN_ID
+			, AN.AN_TITLE
+			, AN.AN_DESC
+			, DATE_FORMAT(AN.REG_DTTM, '%Y.%m.%d %H:%i') REG_DTTM
+			, CASE WHEN ANR.AN_ID IS NULL THEN 'N' ELSE 'Y' END AN_READ
+		FROM ADMIN_NOTICE AN
+		LEFT OUTER JOIN ADMIN_NOTICE_READ ANR ON AN.AN_ID = ANR.AN_ID AND ANR.ADMIN_KEY = #{value}
+		WHERE AN_ST = 'Y'
+		ORDER BY AN.AN_ID DESC
+	</select>
+	
+	<!-- 관리자 게시판 읽기 -->
+	<insert id="updateNoticeRead">
+	/* updateNoticeRead */
+		INSERT INTO ADMIN_NOTICE_READ (
+			AN_ID
+			, ADMIN_KEY
+			, REG_DTTM
+		) VALUES (
+			#{anId}
+			, #{adminKey}
+			, NOW()
+		)
+	</insert>	
+</mapper>

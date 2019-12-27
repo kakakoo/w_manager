@@ -1,0 +1,492 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<title>GROVE - 5</title>
+
+	<style type="text/css">
+		div,
+		p,
+		a,
+		li,
+		td {
+			-webkit-text-size-adjust: none;
+		}
+
+		* {
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+
+		.ReadMsgBody {
+			width: 100%;
+			background-color: #ffffff;
+		}
+
+		.ExternalClass {
+			width: 100%;
+			background-color: #ffffff;
+		}
+
+		body {
+			width: 100%;
+			height: 100%;
+			background-color: #efeff4;
+			margin: 0;
+			padding: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		html {
+			width: 100%;
+			background-color: #efeff4;
+		}
+
+		p {
+			padding: 0!important;
+			margin-top: 0!important;
+			margin-right: 0!important;
+			margin-bottom: 0!important;
+			margin-left: 0!important;
+		}
+
+		.hover:hover {
+			opacity: 0.85;
+			filter: alpha(opacity=85);
+		}
+	</style>
+
+
+
+	<style type="text/css">
+		@media only screen and (max-width: 479px) {
+			body {
+				width: auto!important;
+			}
+			table[class=full] {
+				width: 100%!important;
+				clear: both;
+			}
+			table[class=mobile] {
+				width: 100%!important;
+				padding-left: 30px;
+				padding-right: 30px;
+				clear: both;
+			}
+			table[class=fullCenter] {
+				width: 100%!important;
+				text-align: center!important;
+				clear: both;
+			}
+			td[class=fullCenter] {
+				width: 100%!important;
+				text-align: center!important;
+				clear: both;
+			}
+			*[class=hide] {
+				display: none;
+			}
+			*[class=buttonScale] {
+				float: none!important;
+				text-align: center!important;
+				display: inline-block!important;
+				clear: both;
+			}
+			.image400 img {
+				width: 100%!important;
+				height: auto;
+			}
+		}
+	</style>
+
+
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" yahoo="fix">
+
+	<div>
+		<!-- Notification 5  -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#ffffff" style="background-color: #ffffff;">
+			<tr>
+				<td align="center">
+
+					<div mc:hideable>
+						<!-- Mobile Wrapper -->
+						<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+							<tr>
+								<td width="100%" height="100" align="center">
+
+									<!-- Space -->
+									<table width="400" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
+										<tr>
+											<td width="100%" height="50"></td>
+										</tr>
+									</table>
+									<!-- End Space -->
+
+
+									<!-- Logo -->
+									<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" class="fullCenter" object="drag-module-small">
+										<tr>
+											<td width="400" style="width:140px; height:auto; " align="left" class="fullCenter">
+												<a href="#" style="text-decoration: none;">
+													<img src="https://weys.exchange/resources/img/weys_logo.png" width="140" alt="" border="0" class="hover">
+												</a>
+											</td>
+										</tr>
+									</table>
+									<!-- End Logo -->
+
+
+									<!-- Space -->
+									<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" object="drag-module-small" style="-webkit-border-bottom-right-radius: 6px; -moz-border-bottom-right-radius: 6px; border-bottom-right-radius: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-bottom-left-radius: 6px; border-bottom-left-radius: 6px;">
+										<tr>
+											<td width="100%" valign="middle" align="center">
+
+												<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+												 class="fullCenter">
+													<tr>
+														<td width="100%" height="50" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+
+
+
+									<!-- BOX -->
+									<table width="590" border="0" cellpadding="0" cellspacing="0" align="center" class="full" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;">
+										<tr>
+											<td width="100%" style="border-top-right-radius: 5px; border-top-left-radius: 5px; -webkit-box-shadow: 0px 5px 45.9px 5.1px rgba(0, 0, 0, 0.16); -moz-box-shadow: 0px 5px 45.9px 5.1px rgba(0, 0, 0, 0.16); box-shadow:0px 5px 45.9px 5.1px rgba(0, 0, 0, 0.16)">
+
+												<!-- SORTABLE -->
+												<div class="sortable_inner ui-sortable">
+													<!-- Start Top -->
+
+													<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" bgcolor="#0065ff" style="-webkit-border-top-right-radius: 6px; -moz-border-top-right-radius: 6px; border-top-right-radius: 6px; -webkit-border-top-left-radius: 6px; -moz-border-top-left-radius: 6px; border-top-left-radius: 6px;">
+														<tr>
+															<td width="100%" valign="middle" align="center" class="fullCenter">
+
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" object="drag-module-small">
+																	<tr>
+																		<td width="100%" valign="middle" align="center">
+
+																			<table width="300" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td width="100%" height="50" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																				</tr>
+																			</table>
+
+																		</td>
+																	</tr>
+																</table>
+
+
+
+
+																<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
+																	<tr>
+																		<td width="100%" valign="middle" align="center">
+																			<!-- Title -->
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td valign="middle" width="100%" style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 22px; color: #ffffff; line-height: 37px; font-weight: 300;"
+																					 class="fullCenter" mc:edit="title 1">
+																						${usrNm} 고객님,
+																					</td>
+																				</tr>
+																			</table>
+
+
+																			<!-- Space -->
+																			<table width="400" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
+																				<tr>
+																					<td width="100%" height="15"></td>
+																				</tr>
+																			</table>
+																			<!-- End Space -->
+
+
+																			<!-- Text -->
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td valign="middle" width="100%" style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 30px; color: #ffffff; line-height: 37px; font-weight: 300;"
+																					 class="fullCenter" mc:edit="title 2">
+																						외화를 전달하였습니다.
+																					</td>
+																				</tr>
+																			</table>
+
+																		</td>
+																	</tr>
+																</table>
+
+
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" object="drag-module-small" style="-webkit-border-bottom-right-radius: 6px; -moz-border-bottom-right-radius: 6px; border-bottom-right-radius: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-bottom-left-radius: 6px; border-bottom-left-radius: 6px;">
+																	<tr>
+																		<td width="100%" valign="middle" align="center">
+
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td width="100%" height="50" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+
+															</td>
+														</tr>
+													</table>
+
+
+													<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" style="-webkit-border-bottom-right-radius: 6px; -moz-border-bottom-right-radius: 6px; border-bottom-right-radius: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-bottom-left-radius: 6px; border-bottom-left-radius: 6px;"
+													 object="drag-module-small">
+														<tr>
+															<td width="100%" valign="middle" align="center" class="fullCenter">
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																 class="fullCenter">
+																	<tr>
+																		<td width="100%" height="25" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																	</tr>
+																</table>
+
+																<!-- Text -->
+																<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
+																	<tr>
+																		<td width="100%" valign="middle" align="center">
+
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td valign="middle" width="100%" style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 30px; font-weight: 400;"
+																					 class="fullCenter">
+																						거래코드 : 
+																						<span style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #003894; line-height: 30px; font-weight: 700;">
+																							${rsvNo}</span>
+																					</td>
+																				</tr>
+																			</table>
+
+
+																			<!-- Text -->
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td valign="middle" width="100%" style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 30px; font-weight: 400;" class="fullCenter">
+																						전달시간 :
+																						<span style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #003894; line-height: 30px; font-weight: 700;">
+																							${regDttm}</span>
+																					</td>
+																				</tr>
+																			</table>
+
+																		</td>
+																	</tr>
+																</table>
+
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																 class="fullCenter">
+																	<tr>
+																		<td width="100%" height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																	</tr>
+																</table>
+
+
+																<!-- Prices -->
+																<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+																	<tr>
+																		<td width="100%" valign="middle">
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																			 	
+																			 	<tr>
+																					<td align="right" width="50%" style="text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 18px; color: #0065ff; line-height: 60px; font-weight: 400;">
+																						예약정보
+																					</td>
+
+																					<td align="right" width="50%" style="text-align: right; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 700;">
+																					
+																					</td>
+																				</tr>
+
+																				<tr>
+																					<td align="right" width="50%" style="text-align: left; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 400;">
+																						예약통화
+																					</td>
+
+																					<td align="right" width="50%" style="text-align: right; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 700;">
+																						${unit}
+																					</td>
+																				</tr>
+																				<tr>
+																					<td align="right" width="50%" style="text-align: left; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 400;">
+																						예약금액
+																					</td>
+
+																					<td align="right" width="50%" style="text-align: right; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 700;">
+																						${rsvAmnt}
+																					</td>
+																				</tr>
+																				
+																				
+																				
+																				
+																				<tr>
+																					<td align="right" width="50%" style="padding-top: 20px; text-align: left; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 18px; color: #0065ff; line-height: 60px; font-weight: 400;">
+																						수령정보
+																					</td>
+
+																					<td align="right" width="50%" style="text-align: right; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 700;">
+																					
+																					</td>
+																				</tr>
+																				
+																				<tr>
+																					<td align="right" width="50%" style="text-align: left; border-bottom: 1px solid #f0efef; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 400;">
+																						수령장소
+																					</td>
+
+																					<td align="right" width="50%" style="text-align: right; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 20px; font-weight: 700;">
+																						${addr}
+																					</td>
+																				</tr>
+																				<tr>
+																					<td align="right" width="50%" style="text-align: left; border-bottom: 1px solid #f0efef; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 400;">
+																						수령예정일시
+
+																					<td align="right" width="50%" style="text-align: right; border-bottom: 1px solid #f0efef; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; font-size: 14px; color: #656565; line-height: 46px; font-weight: 700;">
+																						${rsvDt}
+																					</td>
+																				</tr>
+																				
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																 class="fullCenter">
+																	<tr>
+																		<td width="100%" style="padding-top: 50px; line-height: 1px;">
+																			<img width="300" src="${sign}">
+																		</td>
+																	</tr>
+																</table>
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																 class="fullCenter">
+																	<tr>
+																		<td width="100%" height="50" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																	</tr>
+																</table>
+
+																<!-- Button 
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+																	<tr>
+																		<td width="100%" align="center">
+																			<table border="0" cellpadding="0" cellspacing="0" align="center" class="fullCenter">
+																				<tr>
+																					<img width="500" src="http://mblogthumb2.phinf.naver.net/20160704_21/doresoft_1467620283495HkNL4_PNG/BANNER_SIZE.png?type=w800">
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>-->
+
+
+																<!-- Space -->
+																<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" object="drag-module-small" style="-webkit-border-bottom-right-radius: 6px; -moz-border-bottom-right-radius: 6px; border-bottom-right-radius: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-bottom-left-radius: 6px; border-bottom-left-radius: 6px;">
+																	<tr>
+																		<td width="100%" valign="middle" align="center">
+
+																			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+																			 class="fullCenter">
+																				<tr>
+																					<td width="100%" height="50" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+
+															</td>
+														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+									</table>
+
+
+									<!-- CopyRight -->
+									<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" class="full" object="drag-module-small">
+										<tr>
+											<td width="100%" height="60" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+										</tr>
+										<tr>
+											<td valign="middle" width="100%" style="text-align: center; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; color: rgb(165, 168, 174); font-size: 12px; font-weight: 400; line-height: 18px;"
+											 class="fullCenter" mc:edit="copyright"><strong>주식회사 그레잇</strong> | 사업자 등록번호 : 135-88-00906 | 대표 : 조은용<br>
+										    서울특별시 강남구 학동로11길 6 에땅빌딩 5층(06045)<br />고객센터 : 1670-2160 | 카카오톡 : <a href="http://pf.kakao.com/_xdYkGM/chat">@weys</a></td>
+										</tr>
+									</table>
+
+									<table width="352" border="0" cellpadding="0" cellspacing="0" align="center" class="full" object="drag-module-small">
+										<tr>
+											<td width="100%" height="20" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+										</tr>
+										<tr>
+											<td valign="middle" width="100%" style="text-align: center; font-family: 'Spoqa Han Sans', Helvetica, Arial, sans-serif; color: #003894; font-size: 12px; font-weight: 400; line-height: 18px;"
+											 class="fullCenter" mc:edit="unsubscribe">
+												<!--subscribe
+												<a href="#" style="text-decoration: none; color: #003894;">수신거부</a>-->
+												<!--unsub-->
+											</td>
+										</tr>
+									</table>
+
+									<table width="352" border="0" cellpadding="0" cellspacing="0" align="center" class="full" object="drag-module-small">
+										<tr>
+											<td width="100%" height="60" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+										</tr>
+
+									</table>
+									<!-- End CopyRight -->
+
+
+								</td>
+							</tr>
+						</table>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+		<!-- End Notification 5 -->
+
+
+	</div>
+</body>
+<style>
+	body {
+		background: none !important;
+	}
+</style>
